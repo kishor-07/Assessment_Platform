@@ -1,0 +1,38 @@
+body{
+    background-color: #F0EBE3!important;
+    margin-top: 2%;
+    width: 49%;
+    height: 50%;
+    margin-left: 25%;
+    display: grid;
+}
+.col-sm-6{
+    background-color:white;
+    margin-top: 10%;
+    border-radius: 5%;
+    
+}
+.form-control{
+    background-color: aliceblue;
+    width: 100%;
+    padding: 10px;
+    /* text-align: center; */
+}
+.create{
+    margin-bottom: 5%;
+    margin-left: 40%;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+.create:hover{
+    background-color: #F0EBE3;
+    transition-duration: 0.5s;
+}
+/* .form{
+    width: 80%;
+} */
+.text-muted{
+    color: black !important;
+    margin-top: 5%;
+ } 
+/* above used properties are used for login.html */ 

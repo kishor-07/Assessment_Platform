@@ -1,0 +1,33 @@
+body{
+    background-color: bisque!important;
+    width: 49%;
+    margin-left: 25%;
+    display: grid;
+}
+.col-sm-6{
+    background-color: aliceblue;
+    margin-top: 10%;
+    border-radius: 5%;
+    
+}
+/* .sign{
+
+} */
+.create{
+    margin-bottom: 5%;
+    margin-left: 40%;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+.create:hover{
+    background-color: bisque;
+    transition-duration: 0.5s;
+}
+/* .form{
+    width: 80%;
+} */
+.text-muted{
+    color: black !important;
+    margin-top: 5%;
+ } 
+/* above used properties are used for login.html */ 

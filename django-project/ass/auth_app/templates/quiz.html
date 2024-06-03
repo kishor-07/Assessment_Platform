@@ -1,0 +1,74 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      display: flex;
+    }
+    .column-1{
+      flex: 1;
+    }
+    .column-2{
+      width: 55px;;
+    }
+    .ques{
+      margin-left: 55px;
+    }
+    .cols{
+      margin-left: 0px;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="background-color: #6495ED; height: 40px; text-align: center;">Assessment Platform - MCQ</h2>
+  <!-- <p style="margin-left: 1400px; ">Time Left: 73:25</p> -->
+  <div class="container">
+    <div class="column-1">
+      <h4 style="background-color: #F0F8FF; width: 190px; margin-left: -200px; display: inline-block;"><center>Verbal ability</center></h4>
+      <h4 style="background-color: #6495ED; width: 230px; display: inline-block;"><center>Analytical ability</center></h4>
+      <br>
+      <h4 style="background-color: #6495ED; width: 190px; margin-left: -200px;margin-top: 3%;display: inline-block;"><center>Section A</center></h4>
+  <h4 style="background-color: #F0F8FF; width: 230px; display: inline-block;"><center>Section B</center></h4>
+  <!-- <hr style="border-top: 1px solid black; margin-left: 0px;"> -->
+    </div>
+    <div class="column-2">
+      
+      <!-- <p style="margin-left: 1000px; ">Time Left: 73:25</p>     -->
+    </div>
+    <p style="display: inline-block;">Time left:75:25</p>
+  </div>
+  <hr style="border-top: 1px solid black; margin-left: 0px;">
+</div>
+<p style="display: inline-block;">You are answering in section A</p>
+</div>
+  <div class="ques">
+  <p style="background-color: #F0F8FF;">Question Type : Multiple Choice Question</p> 
+  <strong><p>Question 1</p></strong>
+  <p>What is the remainder when we divide 125! by 10^31 </p>
+  <div>
+    <input type="radio" id="huey" />
+    <label for="huey">1</label>
+  </div>
+  <div>
+    <input type="radio" id="huey"checked />
+    <label for="huey">5</label>
+  </div>
+  <div>
+    <input type="radio" id="huey" />
+    <label for="huey">0</label>
+  </div>
+  <div>
+    <input type="radio" id="op"/>
+    <label for="op">4</label>
+  </div>
+</div>
+</body>
+</html>
+<br>
+{% endblock content%}

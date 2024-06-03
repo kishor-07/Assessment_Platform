@@ -1,0 +1,54 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <center><h2 class="text-muted">Login</h2></center>
+    
+            {% if form.non_field_errors %}
+            <small class="text-danger">
+                {{ form.non_field_errors.as_ul }}
+            </small>
+            {% endif %}
+            <form class="form" method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label}}">Username:</label>
+                    <input type="text" name="{{ form.username.name }}" class="form-control" value="{{ form.username.value}}" />
+                    {% if form.username.errors %}
+                    <span class="text-danger">{{ form.username.errors }}</span>
+                    {% endif %}
+                </div>
+    
+                
+                <div class="form-group">
+                    <label for="{{ form.password.id_for_label}}">Password:</label>
+                    <input style="padding-left: 0%; " type="password" name="{{ form.password.name }}" class="form-control" value="{{ form.password.value}}" />
+                    <span class="text-danger">{{ form.password.errors }}</span>
+                </div>
+    
+    
+                <button type="submit" class="create">Login</button>
+                    
+                        <p style="float: left;">Don't have an account?
+                        </p><a href="{% url 'register' %}"style="float:left">Sign up</a>
+    
+    
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  display: flex;
+}
+
+.column {
+  flex:1;
+}
+.button{
+    background-color:#F0F8FF; 
+    height: 45px; 
+    border-radius: 12px 12px 12px 12px;
+}
+button:hover{
+    transition-duration: 0.5s;
+    background-color: #6495ED;
+}
+    </style>
+</head>
+<body>
+    <h1 style="background-color: #6495ED; height: 50px; text-align: center;">Assessment Platform - Coding</h1>
+    <p style="margin-left: 5px;"><b>Note:-</b> You need to press “Final Submit” for your program to be considered for evaluation.If not your exam is auto-closed due to time out.</p>
+    <hr style="border-top: 1px solid black">
+   <div class="container">
+    
+    <div class="column" style="margin-left: -170px;">
+        <h3>Question 1</h3>
+        <p>
+            <b>Problem Statement –</b><br><br>
+
+A chocolate factory is packing chocolates into the packets. The chocolate packets here represent an array  of N number of integer values. The task is to find the empty packets(0) of chocolate and push it to the end of the conveyor belt(array).<br>
+
+<br>
+<b>Example 1 :</b>
+<br><br>
+
+N=8 and arr = [4,5,0,1,9,0,5,0].
+<br><br>
+There are 3 empty packets in the given set. These 3 empty packets represented as O should be pushed towards the end of the array
+<br><br>
+<b>Input :</b>
+<br><br>
+8  – Value of N
+<br><br>
+[4,5,0,1,9,0,5,0] – Element of arr[O] to arr[N-1],While input each element is separated by newline.
+<br><br>
+<b>Output:</b><br><br>
+
+4 5 1 9 5 0 0 0
+<br><br>
+<b>Example 2:</b>
+<br><br>
+
+<b>Input:</b>
+<br><br>
+6 — Value of N.
+<br><br>
+[6,0,1,8,0,2] – Element of arr[0] to arr[N-1], While input each element is separated by newline.
+<br><br>
+<b>Output:</b>
+<br><br>
+6 1 8 2 0 0
+        </p>
+        <br>
+<button type="submit" class="button">Mark for review and next</button>
+<span><button type ="submit" class="button" style=" margin-left: 20px;">Save and next</button></span>
+<a href=" {% url 'dashboard' %}"><button type="submit" style="background-color:#FF0000; height: 45px; margin-left: 290px; border-radius: 12px 12px 12px 12px; text-decoration: none;">End test</button></a>
+<!-- <a href="{% url 'dashboard' %}" type="submit" "><center>End Test</center></a> -->
+<vl style="border-top:1px solid black">
+    </div>
+    <div class="column" style="margin-right: -170px;">
+    <div data-pym-src="https://www.jdoodle.com/embed/v1/63c750267c9a4ff0" ></div>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"> </script>
+   </div>
+</div>
+    </body>
+</html>
+{% endblock content %}

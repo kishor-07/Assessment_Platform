@@ -1,0 +1,163 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+
+      background-color:#F6F5F2 ;
+    }
+    .side{
+      margin-top: 2%;
+      margin-left:17%;
+    }
+    .flex-column{
+      /* background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='currentColor' class='bi bi-journal-check' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0'/%3E%3Cpath d='M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2'/%3E%3Cpath d='M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z'/%3E%3C/svg%3E"); */
+      margin-top: -5.7%;
+      margin-left: 0%;
+      background-color: white;
+      margin-right: 90%;
+      height: 740px;
+      width: 14.5%;
+    }
+    .form-inline{
+      margin-left: 15%;
+    }
+    .navbar navbar-light bg-light{
+      background-color: white;
+    }
+    .out{
+      float: right;
+      margin-left: 7%;
+      text-decoration: none;
+    }
+    .cards{
+      margin-top:-40% ;
+      margin-left: 20%;
+      background-color: white;
+    }
+    cards:hover{
+      background-color: gray;
+    }
+
+
+#quiz {
+  max-width: 800px;
+  margin: 0 auto; 
+  margin-top: -40%;
+  margin-left: 30%;
+  padding: 20px;
+  background-color: #B5C0D0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(198, 222, 60, 0.2);
+}
+
+/* h1 {
+  text-align: center;
+  color: #333333;
+} */
+
+#question {
+  color: #131313;
+  margin-bottom: 20px;
+}
+
+#options {
+  display: block;
+  gap: 1em;
+  justify-content:space-between;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 500px;
+  /* position: absolute; */
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: rgb(227, 238, 10, 245, 161);
+  color: #131313;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  max-width: 500px;
+}
+
+button:hover {
+  background-color: aliceblue;
+}
+  </style>
+  <div>
+    
+  <nav class="navbar navbar-light bg-light">
+    <i class="fa-solid fa-clipboard" style="font-size:30px;"></i>
+    <h2 style="margin-left:-26%;">ASS Platform</h2><br>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    </form>
+  </nav>
+  <h1 class="side">Short answer Description</h1>
+  
+<ul class="nav flex-column">
+  <br><br>
+  <li class="out">
+    <i class="fa-solid fa-layer-group"></i>
+    <a class="" href="{% url 'dashboard' %}" style="text-decoration: none;" >Dashborad</a>
+  </li>
+  <br><br>
+  <li class="out">
+    <i class="fa-solid fa-bars-progress"></i>
+    <a class="" href="#" style="text-decoration: none;">Enrolled Courses</a>
+  </li>
+  <!-- <br>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Assessment Creation</a>
+  </li>
+  <br>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Project</a>
+  </li> -->
+  <br><br>
+  <li class="out">
+    <i class="fa-solid fa-right-from-bracket"></i>
+  <a href="{% url 'logout' %}" style="text-decoration: none;">Logout</a>
+</li>
+</ul>
+</div> 
+<br><br>
+  <div id="quiz">
+    <div class="mb-3">
+		<label for="exampleFormControlTextarea1" class="form-label">1.What does ice become when you heat it? </label>
+		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+	  </div>
+	  <input type="file" id="myFile" name="filename">
+    <button id="submit">Submit</button>
+	<br>
+	<div class="mb-3">
+		<label for="exampleFormControlTextarea1" class="form-label">2.What adjective is opposite to Plural? </label>
+		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+	  </div>
+	  <input type="file" id="myFile" name="filename">
+    <button id="submit">Submit</button>
+	<div class="mb-3">
+		<label for="exampleFormControlTextarea1" class="form-label">3.Which field of study uses the periodic table? </label>
+		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+	  </div>
+	  <input type="file" id="myFile" name="filename">
+    <button id="submit">Submit</button>
+  </div>
+
+</body>
+</html>
+<br>
+{% endblock content%}

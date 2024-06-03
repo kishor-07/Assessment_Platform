@@ -1,0 +1,149 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body{
+      background-color:#F6F5F2 ;
+    }
+    .side{
+      margin-top: 2%;
+      margin-left:17%;
+    }
+    .flex-column{
+      /* background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='currentColor' class='bi bi-journal-check' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0'/%3E%3Cpath d='M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2'/%3E%3Cpath d='M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z'/%3E%3C/svg%3E"); */
+      margin-top: -5.7%;
+      margin-left: 0%;
+      background-color: white;
+      margin-right: 90%;
+      height: 740px;
+      width: 14.5%;
+      /* color: black; */
+    }
+    .form-inline{
+      margin-left: 15%;
+    }
+    .navbar navbar-light bg-light{
+      background-color: white;
+    }
+    .out{
+      float: right;
+      margin-left: 7%;
+      text-decoration:none;
+      padding-left: 5px;
+      color: black;
+    }
+    .cards{
+      margin-top:-40% ;
+      margin-left: 20%;
+      background-color: white;
+      border-radius: 25px;
+      /* border: 2px solid gray; */
+      box-shadow: 8px 13px #B3C8CF;
+    }
+    cards:hover{
+      background-color: gray;
+    }
+  </style>
+  <nav class="navbar navbar-light bg-light">
+    
+    <i class="fa-solid fa-clipboard" style="font-size:30px;"></i>
+    <h2 style="margin-left:-26%;">ASS Platform</h2><br>
+    <form class="form-inline">
+      <br><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="margin-left:0%; color: #474F7A;">
+      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    </form>
+  </nav>
+  <h2 class="side">Welcome {{ request.user.username }}!!</h2>
+  
+<ul class="nav flex-column">
+  <br><br>
+  <li class="out">
+    <i class="fa-solid fa-layer-group"></i>
+    <a href="#" style="text-decoration: none; color: #474F7A;" >Dashborad</a>
+  </li>
+  <br><br>
+  <li class="out">
+    <i class="fa-solid fa-bars-progress"></i>
+    <a href="#" style="text-decoration: none;  color: #474F7A;" >Enrolled Courses</a>
+  </li>
+  <!-- <br><br>
+  <li class="out">
+    <i class="fa-brands fa-gripfire"></i><span></span>
+    <a href="#">Assessment Creation</a>
+  </li>
+  <br><br>
+  <li class="out">
+    <i class="fa-solid fa-microscope"></i>
+    <a href="#">Project</a>
+  </li> -->
+  <br><br>
+  <li class="out">
+    <i class="fa-solid fa-right-from-bracket"></i>
+  <a href="{% url 'logout' %}" style="text-decoration: none;  color: #474F7A;">Logout</a>
+</li>
+</ul>
+<!-- <div class="shadow p-3 mb-5 bg-white rounded"> -->
+<div class="cards" style="width: 18rem;">
+  <img class="card-img-top" src="https://previews.123rf.com/images/garagestock/garagestock1605/garagestock160506277/57612466-assessment-chart-with-keywords-and-icons-flat-design.jpg" alt="Card image cap" height="240px" style="border-radius: 22px 22px 0px 0px;">
+  <div class="card-body">
+    <h5 class="card-title">MCQs</h5>
+    <p class="card-text"></p>
+    <a href="{% url 'quiz' %}" class="btn btn-primary">Start MCQs</a>
+  </div>
+</div>
+<div class="cards" style="width: 18rem; margin-left: 45%; margin-top: -23.5%;">
+  <img class="card-img-top" src="https://previews.123rf.com/images/garagestock/garagestock1605/garagestock160506277/57612466-assessment-chart-with-keywords-and-icons-flat-design.jpg" alt="Card image cap" height="240px" style="border-radius: 22px 22px 0px 0px;">
+  <div class="card-body">
+    <h5 class="card-title">Programming</h5>
+    <p class="card-text"></p>
+    <a href="{% url 'pro' %}" class="btn btn-primary">Start Programming</a>
+  </div>
+</div>
+<div class="cards" style="width: 18rem; margin-left: 70%; margin-top: -23.5%;">
+  <img class="card-img-top" src="https://previews.123rf.com/images/garagestock/garagestock1605/garagestock160506277/57612466-assessment-chart-with-keywords-and-icons-flat-design.jpg" alt="Card image cap" height="240px" style="border-radius: 22px 22px 0px 0px;" >
+  <div class="card-body">
+    <h5 class="card-title">Short Answer Assessment</h5>
+    <p class="card-text"></p>
+    <a href="{% url 'short' %}" class="btn btn-primary">Start Test</a>
+  </div>
+</div>
+</div>
+<!-- <div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="cards" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <div class="cards" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<!-- <a href="{% url 'logout' %}" class="btn btn-dark">Logout</a> -->
+</body>
+</html>
+<br>
+
+
+{% endblock %}

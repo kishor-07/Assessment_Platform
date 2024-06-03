@@ -1,0 +1,85 @@
+{% extends 'layouts/app.html' %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="static/css/reg.css">
+</head>
+<body>
+    <style>
+        body{
+    background-color: #F0EBE3!important;
+    margin-top: 2%;
+    width: 49%;
+    height: 50%;
+    margin-left: 25%;
+    display: grid;
+}
+.col-sm-6{
+    background-color:white;
+    margin-top: 10%;
+    border-radius: 5%;
+    
+}
+.form-control{
+    background-color: aliceblue;
+}
+.create{
+    margin-bottom: 5%;
+    margin-left: 40%;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+.create:hover{
+    background-color: #F0EBE3;
+    transition-duration: 0.5s;
+}
+/* .form{
+    width: 80%;
+} */
+.text-muted{
+    color: black !important;
+    margin-top: 5%;
+ } 
+
+    </style>
+<div class="row justify-content-center">
+    <div class="col-sm-6">
+        <center><h2 class="text-muted">Register</h2></center>
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label}}">Username:</label>
+                <input type="text" name="{{ form.username.name }}" class="form-control" value="{{ form.username.value}}" />
+                {% if form.username.errors %}
+                <span class="text-danger">{{ form.username.errors }}</span>
+                {% endif %}
+            </div>
+
+            
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label}}">Password:</label>
+                <input type="password" name="{{ form.password1.name }}" class="form-control" value="{{ form.password1.value}}" />
+                <span class="text-danger">{{ form.password1.errors }}</span>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label}}">Re-Type Password:</label>
+                <input type="password" name="{{ form.password2.name }}" class="form-control" value="{{ form.password2.value}}" />
+                <span class="text-danger">{{ form.password2.errors }}</span>
+            </div>
+
+            <button type="submit" class="create">Submit</button>
+
+            <p style="float: left;">Already have an account?</p><a href="{% url 'login' %}"  style="float: left;">Login</a>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}
